@@ -6,16 +6,13 @@ backend:
 
 site_url: https://vestibule.netlify.app
 locale: en
-
-media_folder: "images"          # where uploaded media files go in the repo
-public_folder: "/images"        # how those files are served on the site
-
-publish_mode: editorial_workflow # allows drafts + publish flow
+media_folder: "images"
+public_folder: "/images"
+publish_mode: editorial_workflow
 
 collections:
   - name: "versions"
     label: "Song Versions"
-    label_singular: "Song Version"
     folder: "changelogs"
     create: true
     slug: "{{fields.song | slugify}}-{{fields.version}}"
@@ -23,19 +20,7 @@ collections:
     identifier_field: "song"
     fields:
       - { label: "Song Title", name: "song", widget: "string" }
-      - { label: "Version Tag", name: "version", widget: "string", hint: "Example: v0.2" }
+      - { label: "Version Tag", name: "version", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Notes / Changelog", name: "notes", widget: "markdown" }
-      - { label: "Audio File", name: "audio", widget: "file", media_library: { config: { multiple: false } } }
-
-  - name: "pages"
-    label: "Pages"
-    folder: ""
-    create: false
-    files:
-      - label: "Home Page"
-        name: "index"
-        file: "index.html"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "string" }
+      - { label: "Audio File", name: "audio", widget: "file" }
