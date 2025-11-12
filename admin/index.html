@@ -11,16 +11,18 @@
 </head>
 <body>
   <script>
-    // Auto-redirect to /admin/ after login if user not already logged in
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      } else {
+        // force Decap CMS to reinitialize once logged in
+        CMS.init();
+      }
+    });
+  }
+</script>
 </body>
 </html>
