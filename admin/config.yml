@@ -5,7 +5,6 @@ backend:
   gateway_url: https://vestibule.netlify.app/.netlify/git
 
 site_url: https://vestibule.netlify.app
-logo_url: https://vestibule.netlify.app/images/logo.png   # optional; safe to remove if you don’t have one
 locale: en
 
 media_folder: "images"          # where uploaded media files go in the repo
