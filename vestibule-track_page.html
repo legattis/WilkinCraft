@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vestibule — v0.1 Alpha</title>
+  <meta name="description" content="James Wilkinson — 'Vestibule' EP (v0.1 alpha). Music in development.">
+  <meta property="og:title" content="Vestibule — v0.1 Alpha" />
+  <meta property="og:description" content="Music in development — versioned tracks with changelogs." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b0b0b" />
+  <style>
+ /* --- VESTIBULE CHANGELOG AESTHETIC --- */
+
+details {
+  background: #faf7f2;       /* warm cream */
+  border: 1px solid #e3dbd3;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  transition: background 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* when opened */
+details[open] {
+  background: #f9f2e8;       /* slightly warmer when open */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #5e472d;            /* warm brown */
+  display: flex;
+  align-items: center;
+  user-select: none;
+  list-style: none;
+}
+
+/* hide default marker cross-browser */
+summary::-webkit-details-marker {
+  display: none;
+}
+summary::marker {
+  display: none;
+}
+
+/* custom arrow */
+summary::before {
+  content: "▸";
+  margin-right: 0.5rem;
+  transition: transform 0.25s ease;
+  color: #b6783b;            /* soft amber */
+}
+
+/* rotate arrow on open */
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details ul {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+details li {
+  margin-bottom: 0.4rem;
+  color: #2f2f2f;
+  line-height: 1.4;
+}
+
+/* optional version pill tags: <span class="ver">v0.1</span> */
+.ver {
+  display: inline-block;
+  background: #e7d3b8;
+  color: #5e472d;
+  padding: 2px 7px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+}
+/* Center the content and limit to readable width */
+body {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  background: #fbfaf8; /* subtle warm background */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Increase spacing around each changelog panel */
+details {
+  margin: 2rem 0;
+}
+
+/* Give the panel some dimensionality */
+details {
+  background: #fdfcf9;
+  border: 1px solid #e8e1d8;
+  border-radius: 10px;
+}
+
+/* Slight shadow when open for depth */
+details[open] {
+  box-shadow: 0 6px 14px rgba(0,0,0,0.07);
+}
+
+/* Make arrow a little softer */
+summary::before {
+  color: #c48a48;
+}
+
+/* Improve list readability */
+details li {
+  font-size: 0.95rem;
+  padding-left: 2px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vestibule — v0.1 (Alpha)</h1>
+    <div class="sub">Music in development • Four raw takes • Versioned like software • © <span id="year"></span> James Wilkinson</div>
+  </header>
+
+  <div class="wrap">
+    <div class="notice">
+      This is the <strong>alpha</strong>: one‑mic, voice + guitar takes. Each track keeps a <em>changelog</em>. Newer versions will appear above older ones. Final mixes will be marked <span class="tag">v1.0</span>.
+    </div>
+
+    <!-- SONG 1 -->
+    <section class="song" id="mistakes">
+      <h2>Mistakes Were Made <span class="ver">v0.1</span></h2>
+      <div class="meta" style="display:none;">single‑take • voice + guitar • board mix</div>
+      <!-- Replace src with your hosted MP3/OGG (or YouTube embed if needed) -->
+      <audio controls src="/audio/mistakes_v0.1.mp3">Your browser does not support the audio element.</audio>
+      <details >
+        <summary>Changelog</summary>
+        <ul class="log">
+          <li><strong>v0.1</strong> — first public pass, one mic, no edits</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- SONG 2 -->
+    <section class="song" id="only-you">
+      <h2>Only You <span class="ver">v0.1</span></h2>
+      <div class="meta" style="display:none;">single‑take • voice + guitar • board mix</div>
+      <audio controls src="/audio/onlyyou_v0.1.mp3"></audio>
+      <details >
+        <summary>Changelog</summary>
+        <ul class="log">
+          <li><strong>v0.1</strong> — first public pass</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- SONG 3 -->
+    <section class="song" id="gently">
+      <h2>Gently <span class="ver">v0.1</span></h2>
+      <div class="meta" style="display:none;">single‑take • voice + guitar • board mix</div>
+      <audio controls src="/audio/gently_v0.1.mp3"></audio>
+      <details >
+        <summary>Changelog</summary>
+        <ul class="log">
+          <li><strong>v0.1</strong> — first public pass</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- SONG 4 -->
+    <section class="song" id="have-you-seen-spring">
+      <h2>Have You Seen Spring <span class="ver">v0.1</span></h2>
+      <div class="meta" style="display:none;">single‑take • voice + guitar • board mix</div>
+      <audio controls src="/audio/haveyouseenspring_v0.1.mp3"></audio>
+      <details >
+        <summary>Changelog</summary>
+        <ul class="log">
+          <li><strong>v0.1</strong> — first public pass</li>
+        </ul>
+      </details>
+    </section>
+
+    <div class="grid">
+      <aside class="sidenote">
+        <h3 style="margin-top:0">About the project</h3>
+        <p><em>Vestibule</em> is the entryway. These songs will evolve in public — like software — until they reach <span class="tag">v1.0</span>. You can trace every change right here.</p>
+      </aside>
+      <aside class="sidenote">
+        <h3 style="margin-top:0">Follow the versions</h3>
+        <p>When a track updates, its <strong>tag</strong> changes (v0.2, v0.3…). Older versions stay playable for comparison. Final masters are archived but remain accessible.</p>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    <p>© <span id="year2"></span> James Wilkinson • Part of the WilkinCraft universe</p>
+  </footer>
+
+  <script>
+    // Set year stamps
+    const y = new Date().getFullYear();
+    document.getElementById('year').textContent = y;
+    document.getElementById('year2').textContent = y;
+
+    // --- Optional helper: quick client-side version insert ---
+    // Call addVersion('mistakes', 'v0.2', 'added low harmony on chorus 2', '/audio/mistakes_v0.2.mp3')
+    function addVersion(sectionId, version, note, src){
+      const sec = document.getElementById(sectionId);
+      if(!sec) return;
+      // Update visible tag to latest
+      const tag = sec.querySelector('.tag');
+      if(tag) tag.textContent = version;
+      // Insert a new audio element above the old one (latest-first stack)
+      const oldAudio = sec.querySelector('audio');
+      const a = document.createElement('audio');
+      a.setAttribute('controls','');
+      a.src = src;
+      sec.insertBefore(a, oldAudio);
+      // Prepend a changelog item
+      const list = sec.querySelector('.log');
+      if(list){
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${version}</strong> — ${note}`;
+        list.insertBefore(li, list.firstChild);
+      }
+    }
+  </script>
+</body>
+</html>
