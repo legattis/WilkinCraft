@@ -1,28 +1,35 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Vestibule CMS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Load the Decap CMS app -->
+  <title>Vestibule CMS</title>
+
+  <!-- Load Decap CMS first -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <!-- Load Netlify Identity widget -->
+
+  <!-- Load Netlify Identity widget after CMS -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
   <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
+    // Wait until both CMS and Identity have loaded
+    window.addEventListener("load", function () {
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          } else {
+            // CMS is guaranteed to exist now
+            if (window.CMS) {
+              window.CMS.init();
+            }
+          }
         });
-      } else {
-        // force Decap CMS to reinitialize once logged in
-        CMS.init();
       }
     });
-  }
-</script>
+  </script>
 </body>
 </html>
